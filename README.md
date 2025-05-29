@@ -9,52 +9,47 @@
 [![Technical Debt][technical_debt_badge]][technical_debt_link]
 [![Lines of Code][lines_of_code_badge]][lines_of_code_link]
 
-Простая консольная утилита для пакетного перевода текстовых файлов с помощью неофициального API Google Translate.
-
-Программа рекурсивно обходит указанную папку, читает содержимое всех файлов, переводит текст на целевой язык и сохраняет
-переведённый текст обратно в файлы. Путь к папке с текстовыми файлами и целевой язык определяются в файле config.json.
-
-Перевод выполняется через публичный API Google Translate (`https://translate.googleapis.com/translate_a/single`), что
-позволяет не использовать официальный платный API.
+Простая утилита для автоматического перевода любого количества текстовых файлов из выбранной папки через переводчик
+Google. Все настройки в файле config.json.
 
 <!----------------------------------------------------------------------------->
 
-[code_smells_badge]: https://sonarcloud.io/api/project_badges/measure?project=Hummel009_LOTR-Speech-Translator&metric=code_smells
+[code_smells_badge]: https://sonarcloud.io/api/project_badges/measure?project=Hummel009_Batch-File-Translator&metric=code_smells
 
-[code_smells_link]: https://sonarcloud.io/summary/overall?id=Hummel009_LOTR-Speech-Translator
+[code_smells_link]: https://sonarcloud.io/summary/overall?id=Hummel009_Batch-File-Translator
 
-[maintainability_rating_badge]: https://sonarcloud.io/api/project_badges/measure?project=Hummel009_LOTR-Speech-Translator&metric=sqale_rating
+[maintainability_rating_badge]: https://sonarcloud.io/api/project_badges/measure?project=Hummel009_Batch-File-Translator&metric=sqale_rating
 
-[maintainability_rating_link]: https://sonarcloud.io/summary/overall?id=Hummel009_LOTR-Speech-Translator
+[maintainability_rating_link]: https://sonarcloud.io/summary/overall?id=Hummel009_Batch-File-Translator
 
-[security_rating_badge]: https://sonarcloud.io/api/project_badges/measure?project=Hummel009_LOTR-Speech-Translator&metric=security_rating
+[security_rating_badge]: https://sonarcloud.io/api/project_badges/measure?project=Hummel009_Batch-File-Translator&metric=security_rating
 
-[security_rating_link]: https://sonarcloud.io/summary/overall?id=Hummel009_LOTR-Speech-Translator
+[security_rating_link]: https://sonarcloud.io/summary/overall?id=Hummel009_Batch-File-Translator
 
-[bugs_badge]: https://sonarcloud.io/api/project_badges/measure?project=Hummel009_LOTR-Speech-Translator&metric=bugs
+[bugs_badge]: https://sonarcloud.io/api/project_badges/measure?project=Hummel009_Batch-File-Translator&metric=bugs
 
-[bugs_link]: https://sonarcloud.io/summary/overall?id=Hummel009_LOTR-Speech-Translator
+[bugs_link]: https://sonarcloud.io/summary/overall?id=Hummel009_Batch-File-Translator
 
-[vulnerabilities_badge]: https://sonarcloud.io/api/project_badges/measure?project=Hummel009_LOTR-Speech-Translator&metric=vulnerabilities
+[vulnerabilities_badge]: https://sonarcloud.io/api/project_badges/measure?project=Hummel009_Batch-File-Translator&metric=vulnerabilities
 
-[vulnerabilities_link]: https://sonarcloud.io/summary/overall?id=Hummel009_LOTR-Speech-Translator
+[vulnerabilities_link]: https://sonarcloud.io/summary/overall?id=Hummel009_Batch-File-Translator
 
-[duplicated_lines_density_badge]: https://sonarcloud.io/api/project_badges/measure?project=Hummel009_LOTR-Speech-Translator&metric=duplicated_lines_density
+[duplicated_lines_density_badge]: https://sonarcloud.io/api/project_badges/measure?project=Hummel009_Batch-File-Translator&metric=duplicated_lines_density
 
-[duplicated_lines_density_link]: https://sonarcloud.io/summary/overall?id=Hummel009_LOTR-Speech-Translator
+[duplicated_lines_density_link]: https://sonarcloud.io/summary/overall?id=Hummel009_Batch-File-Translator
 
-[reliability_rating_badge]: https://sonarcloud.io/api/project_badges/measure?project=Hummel009_LOTR-Speech-Translator&metric=reliability_rating
+[reliability_rating_badge]: https://sonarcloud.io/api/project_badges/measure?project=Hummel009_Batch-File-Translator&metric=reliability_rating
 
-[reliability_rating_link]: https://sonarcloud.io/summary/overall?id=Hummel009_LOTR-Speech-Translator
+[reliability_rating_link]: https://sonarcloud.io/summary/overall?id=Hummel009_Batch-File-Translator
 
-[quality_gate_status_badge]: https://sonarcloud.io/api/project_badges/measure?project=Hummel009_LOTR-Speech-Translator&metric=alert_status
+[quality_gate_status_badge]: https://sonarcloud.io/api/project_badges/measure?project=Hummel009_Batch-File-Translator&metric=alert_status
 
-[quality_gate_status_link]: https://sonarcloud.io/summary/overall?id=Hummel009_LOTR-Speech-Translator
+[quality_gate_status_link]: https://sonarcloud.io/summary/overall?id=Hummel009_Batch-File-Translator
 
-[technical_debt_badge]: https://sonarcloud.io/api/project_badges/measure?project=Hummel009_LOTR-Speech-Translator&metric=sqale_index
+[technical_debt_badge]: https://sonarcloud.io/api/project_badges/measure?project=Hummel009_Batch-File-Translator&metric=sqale_index
 
-[technical_debt_link]: https://sonarcloud.io/summary/overall?id=Hummel009_LOTR-Speech-Translator
+[technical_debt_link]: https://sonarcloud.io/summary/overall?id=Hummel009_Batch-File-Translator
 
-[lines_of_code_badge]: https://sonarcloud.io/api/project_badges/measure?project=Hummel009_LOTR-Speech-Translator&metric=ncloc
+[lines_of_code_badge]: https://sonarcloud.io/api/project_badges/measure?project=Hummel009_Batch-File-Translator&metric=ncloc
 
-[lines_of_code_link]: https://sonarcloud.io/summary/overall?id=Hummel009_LOTR-Speech-Translator
+[lines_of_code_link]: https://sonarcloud.io/summary/overall?id=Hummel009_Batch-File-Translator
