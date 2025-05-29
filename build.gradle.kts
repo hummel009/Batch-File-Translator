@@ -26,7 +26,7 @@ java {
 }
 
 application {
-	mainClass = "com.github.hummel.lotrspeech.MainKt"
+	mainClass = "com.github.hummel.bft.MainKt"
 }
 
 tasks {
@@ -34,7 +34,7 @@ tasks {
 		manifest {
 			attributes(
 				mapOf(
-					"Main-Class" to "com.github.hummel.lotrspeech.MainKt"
+					"Main-Class" to "com.github.hummel.bft.MainKt"
 				)
 			)
 		}

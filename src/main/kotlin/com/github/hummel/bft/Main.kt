@@ -1,4 +1,4 @@
-package com.github.hummel.lotrspeech
+package com.github.hummel.bft
 
 import com.google.gson.JsonParser
 import org.apache.hc.client5.http.classic.methods.HttpGet
