@@ -15,6 +15,7 @@ import java.net.URLEncoder
 import java.nio.charset.StandardCharsets
 import javax.swing.*
 import javax.swing.border.EmptyBorder
+import kotlin.concurrent.thread
 
 fun main() {
 	FlatLightLaf.setup()
@@ -149,7 +150,9 @@ class TranslatorGUI : JFrame() {
 
 		val timeoutSeconds = try {
 			val t = timeoutField.text.toLong()
-			if (t <= 0) throw NumberFormatException()
+			if (t <= 0) {
+				throw NumberFormatException()
+			}
 			t
 		} catch (_: Exception) {
 			JOptionPane.showMessageDialog(this, "Timeout must be a positive number", "Error", JOptionPane.ERROR_MESSAGE)
@@ -160,7 +163,7 @@ class TranslatorGUI : JFrame() {
 			it.isEnabled = false
 		}
 
-		Thread {
+		thread {
 			try {
 				val selectedSourceLangName = sourceLangCombo.selectedItem as String
 				val selectedTargetLangName = targetLangCombo.selectedItem as String
@@ -180,7 +183,10 @@ class TranslatorGUI : JFrame() {
 				e.printStackTrace()
 				SwingUtilities.invokeLater {
 					JOptionPane.showMessageDialog(
-						this, "Error: ${e.message}", "Error", JOptionPane.ERROR_MESSAGE
+						this,
+						"You were rate limited by Google! Wait and increase timeout.",
+						"Error",
+						JOptionPane.ERROR_MESSAGE
 					)
 				}
 			} finally {
@@ -190,7 +196,7 @@ class TranslatorGUI : JFrame() {
 					}
 				}
 			}
-		}.start()
+		}
 	}
 
 
@@ -212,14 +218,16 @@ class TranslatorGUI : JFrame() {
 			}
 		} else if (file.isFile) {
 			val originalText = file.readText()
-			val translatedText = translateText(originalText, sourceLanguage, targetLanguage, timeoutSeconds)
+			val translatedText = translateText(
+				originalText, sourceLanguage, targetLanguage, timeoutSeconds
+			) ?: throw Exception()
 			file.writeText(translatedText)
 		}
 	}
 
 	private fun translateText(
 		text: String, sourceLanguage: String, targetLanguage: String, timeoutSeconds: Long
-	): String {
+	): String? {
 		val apiUrl = "https://translate.googleapis.com/translate_a/single"
 		val parameters = mapOf(
 			"client" to "gtx",
@@ -244,17 +252,22 @@ class TranslatorGUI : JFrame() {
 		}
 	}
 
-	private fun parseTranslatedText(jsonResponse: String): String {
-		val jsonElement = JsonParser.parseString(jsonResponse)
-		val translationsArray = jsonElement.asJsonArray[0].asJsonArray
-		val translatedText = StringBuilder()
+	private fun parseTranslatedText(jsonResponse: String): String? {
+		return try {
+			val jsonElement = JsonParser.parseString(jsonResponse)
+			val translationsArray = jsonElement.asJsonArray[0].asJsonArray
+			val translatedText = StringBuilder()
 
-		(0 until translationsArray.size()).asSequence().map {
-			translationsArray[it].asJsonArray
-		}.forEach {
-			translatedText.append(it[0].asString)
+			(0 until translationsArray.size()).asSequence().map {
+				translationsArray[it].asJsonArray
+			}.forEach {
+				translatedText.append(it[0].asString)
+			}
+
+			"$translatedText"
+		} catch (e: Exception) {
+			e.printStackTrace()
+			null
 		}
-
-		return "$translatedText"
 	}
 }
