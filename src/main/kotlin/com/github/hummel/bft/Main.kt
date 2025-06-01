@@ -152,6 +152,7 @@ class FileTranslator : JFrame() {
 			}
 			t
 		} catch (e: Exception) {
+			e.printStackTrace()
 			JOptionPane.showMessageDialog(
 				this, "Error: ${e.message}", "Error", JOptionPane.ERROR_MESSAGE
 			)
