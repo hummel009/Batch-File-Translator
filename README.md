@@ -1,3 +1,5 @@
+<div align = "center">
+
 [![Code Smells][code_smells_badge]][code_smells_link]
 [![Maintainability Rating][maintainability_rating_badge]][maintainability_rating_link]
 [![Security Rating][security_rating_badge]][security_rating_link]
@@ -9,7 +11,9 @@
 [![Technical Debt][technical_debt_badge]][technical_debt_link]
 [![Lines of Code][lines_of_code_badge]][lines_of_code_link]
 
-Программа для массового перевода текстовых файлов.
+Program for bulk translation of text files.
+
+</div>
 
 <!----------------------------------------------------------------------------->
 
