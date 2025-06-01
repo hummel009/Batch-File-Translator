@@ -83,8 +83,6 @@ class FileTranslator : JFrame() {
 			}, BorderLayout.WEST)
 
 			sourceLangCombo = JComboBox<String>().apply {
-				preferredSize = Dimension(200, preferredSize.height)
-
 				languages.map {
 					it.first
 				}.forEach {
@@ -100,8 +98,6 @@ class FileTranslator : JFrame() {
 			}, BorderLayout.WEST)
 
 			targetLangCombo = JComboBox<String>().apply {
-				preferredSize = Dimension(200, preferredSize.height)
-
 				languages.filter {
 					it.second != "auto"
 				}.map {
@@ -119,7 +115,6 @@ class FileTranslator : JFrame() {
 			}, BorderLayout.WEST)
 
 			timeoutField = JTextField("5")
-			timeoutField.preferredSize = Dimension(200, timeoutField.preferredSize.height)
 			add(timeoutField, BorderLayout.CENTER)
 		}
 
