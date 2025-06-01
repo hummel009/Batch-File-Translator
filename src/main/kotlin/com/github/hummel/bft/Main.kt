@@ -139,7 +139,9 @@ class FileTranslator : JFrame() {
 	private fun process() {
 		val folderPath = folderPathField.text
 		if (folderPath.isEmpty()) {
-			JOptionPane.showMessageDialog(this, "Select folder path", "Error", JOptionPane.ERROR_MESSAGE)
+			JOptionPane.showMessageDialog(
+				this, "Empty fields", "Error", JOptionPane.ERROR_MESSAGE
+			)
 			return
 		}
 
@@ -149,8 +151,10 @@ class FileTranslator : JFrame() {
 				throw NumberFormatException()
 			}
 			t
-		} catch (_: Exception) {
-			JOptionPane.showMessageDialog(this, "Timeout must be a positive number", "Error", JOptionPane.ERROR_MESSAGE)
+		} catch (e: Exception) {
+			JOptionPane.showMessageDialog(
+				this, "Error: ${e.message}", "Error", JOptionPane.ERROR_MESSAGE
+			)
 			return
 		}
 
@@ -169,26 +173,17 @@ class FileTranslator : JFrame() {
 				val folder = File(folderPath)
 				translateFilesRecursive(folder, sourceLang, targetLang, timeoutSeconds)
 
-				SwingUtilities.invokeLater {
-					JOptionPane.showMessageDialog(
-						this, "Translation completed!", "Success", JOptionPane.INFORMATION_MESSAGE
-					)
-				}
+				JOptionPane.showMessageDialog(
+					this, "Complete", "Success", JOptionPane.INFORMATION_MESSAGE
+				)
 			} catch (e: Exception) {
 				e.printStackTrace()
-				SwingUtilities.invokeLater {
-					JOptionPane.showMessageDialog(
-						this,
-						"Error during translation: ${e.message}",
-						"Error",
-						JOptionPane.ERROR_MESSAGE
-					)
-				}
+				JOptionPane.showMessageDialog(
+					this, "Error: ${e.message}", "Error", JOptionPane.ERROR_MESSAGE
+				)
 			} finally {
-				SwingUtilities.invokeLater {
-					listOf(folderPathField, sourceLangCombo, targetLangCombo, processButton).forEach {
-						it.isEnabled = true
-					}
+				listOf(folderPathField, sourceLangCombo, targetLangCombo, processButton).forEach {
+					it.isEnabled = true
 				}
 			}
 		}
