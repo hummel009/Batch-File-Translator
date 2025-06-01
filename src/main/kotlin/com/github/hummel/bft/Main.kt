@@ -69,6 +69,7 @@ class FileTranslator : JFrame() {
 			add(folderPathField, BorderLayout.CENTER)
 
 			val browseButton = JButton("Browse").apply {
+				preferredSize = Dimension(100, preferredSize.height)
 				addActionListener {
 					selectPath()
 				}
