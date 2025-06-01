@@ -22,7 +22,7 @@ fun main() {
 	EventQueue.invokeLater {
 		try {
 			UIManager.setLookAndFeel(FlatMTGitHubDarkIJTheme())
-			val frame = TranslatorGUI()
+			val frame = FileTranslator()
 			frame.isVisible = true
 		} catch (e: Exception) {
 			e.printStackTrace()
@@ -30,7 +30,7 @@ fun main() {
 	}
 }
 
-class TranslatorGUI : JFrame() {
+class FileTranslator : JFrame() {
 	private var folderPathField: JTextField
 	private var sourceLangCombo: JComboBox<String>
 	private var targetLangCombo: JComboBox<String>
