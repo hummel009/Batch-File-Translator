@@ -184,7 +184,7 @@ class FileTranslator : JFrame() {
 				SwingUtilities.invokeLater {
 					JOptionPane.showMessageDialog(
 						this,
-						"You were rate limited by Google! Wait and increase timeout.",
+						"Error during translation: ${e.message}",
 						"Error",
 						JOptionPane.ERROR_MESSAGE
 					)
