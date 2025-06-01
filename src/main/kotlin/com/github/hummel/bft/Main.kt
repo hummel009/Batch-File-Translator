@@ -120,7 +120,6 @@ class FileTranslator : JFrame() {
 
 		processButton = JButton("Translate").apply {
 			preferredSize = Dimension(100, preferredSize.height)
-			alignmentX = CENTER_ALIGNMENT
 			addActionListener {
 				process()
 			}
