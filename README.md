@@ -1,5 +1,3 @@
-<div align = "center">
-
 [![Code Smells][code_smells_badge]][code_smells_link]
 [![Maintainability Rating][maintainability_rating_badge]][maintainability_rating_link]
 [![Security Rating][security_rating_badge]][security_rating_link]
@@ -13,8 +11,6 @@
 
 Program for bulk translation of text files. Translates the contents of all files that are in the specified folder, as
 well as in folders that are in the specified folder, and so on (recursively). If you see an error, increase the timeout.
-
-</div>
 
 <!----------------------------------------------------------------------------->
 
