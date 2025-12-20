@@ -228,7 +228,7 @@ class FileTranslator : JFrame() {
 			"q" to URLEncoder.encode(text, StandardCharsets.UTF_8.toString())
 		)
 
-		val url = "$apiUrl?${parameters.map { "${it.key}=${it.value}" }.joinToString("&")}"
+		val url = "$apiUrl?${parameters.map { (key, value) -> "$key=$value" }.joinToString("&")}"
 
 		val request = HttpGet(url)
 
@@ -239,7 +239,7 @@ class FileTranslator : JFrame() {
 				parseTranslatedText(jsonResponse)
 			}
 			Thread.sleep(timeoutSeconds * 1000)
-			return translatedText
+			return@translateText translatedText
 		}
 	}
 
