@@ -9,7 +9,7 @@
 [![Technical Debt][technical_debt_badge]][technical_debt_link]
 [![Lines of Code][lines_of_code_badge]][lines_of_code_link]
 
-Program for bulk translation of text files. Translates the contents of all files that are in the specified folder, as
+Program for bulk translating of text files. Translates the contents of all files that are in the specified folder, as
 well as in folders that are in the specified folder, and so on (recursively). If you see an error, increase the timeout.
 
 <!----------------------------------------------------------------------------->
